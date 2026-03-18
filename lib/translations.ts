@@ -596,6 +596,118 @@ export const translations = {
 
     // Press Kit page
     backToHome: "← Volver al inicio"
+  },
+
+  nl: {
+    // Meta
+    pageTitle: "UdenUSA - Vind alternatieven voor Amerikaanse producten",
+
+    // Banner
+    bannerText: "🎉 De Android-app is nu beschikbaar! Download UdenUSA in de Play Store",
+    bannerButton: "Probeer nu",
+
+    // Header
+    tagline: "Steun jij Trump wanneer je winkelt?",
+    description: "UdenUSA helpt je Amerikaanse producten te identificeren en vindt alternatieven uit de rest van de wereld.",
+    ctaButton: "Download UdenUSA",
+    ctaWebButton: "Open webapp",
+    ctaStatusButton: "Bekijk",
+    ctaStatusButtonEnd: "Status",
+    qrCode: "Scan de QR-code om de app te downloaden",
+    appAvailability: "Nu beschikbaar op iOS, Android en web",
+
+    // Social media
+    socialMediaHeading: "Volg ons op sociale media",
+    socialMediaNote: "Misschien lijkt het ironisch om Amerikaanse sociale media te gebruiken, maar we willen zoveel mogelijk mensen bereiken. We keren de wapens van de vijand tegen hem.",
+
+    // Press mentions
+    pressTitle: "Wereldwijd in het nieuws",
+
+    // Problem section
+    problemTitle: "Waarom Amerikaanse producten vermijden?",
+    problemText: "Elke keer dat je een Amerikaans product koopt, steun je indirect een systeem dat ingaat tegen veel van de waarden die we in Europa koesteren. Maar het kan moeilijk zijn om te achterhalen waar producten vandaan komen. UdenUSA geeft je de controle terug.",
+
+    // Solution section
+    solutionTitle: "Zo werkt het",
+    solutionItems: [
+      "📱 Scan het product met je telefoon (niet de streepjescode!)",
+      "🔍 Bekijk of het product uit de VS komt",
+      "🌍 Vind alternatieven uit andere landen",
+      "🔒 Geen tracking – je zoekopdracht blijft privé"
+    ],
+
+    // Quote
+    quote: "\"Help ons onze afhankelijkheid van de VS te verminderen.\"",
+
+    // FAQ section
+    faqTitle: "Veelgestelde vragen",
+    faqItems: [
+      {
+        question: "Wat is het doel van de app?",
+        answer: "Het doel is om de macht terug te geven aan consumenten en de zelfvoorziening van Europa (en met name Denemarken) te versterken. Door het eenvoudig te maken om Amerikaanse producten te herkennen, kun je actief producten kiezen (of vermijden) op basis van herkomst."
+      },
+      {
+        question: "Hoe werkt de scanner?",
+        answer: "Open de app, scan een product en ontdek direct of het product Amerikaans is."
+      },
+      {
+        question: "Welke producten kan ik scannen?",
+        answer: "Alle producten. Voor de beste resultaten raden we aan om te scannen bij goede verlichting en zonder het product af te dekken – voedsel, elektronica, kleding en nog veel meer."
+      },
+      {
+        question: "Is het gratis?",
+        answer: "Gedeeltelijk. UdenUSA is gratis te gebruiken, maar voor de beste ervaring raden we aan om te upgraden naar de Pro-versie. UdenUSA Pro geeft je onbeperkte scans, gedetailleerdere resultaten en veel andere geweldige functies."
+      },
+      {
+        question: "Waarom de focus op de VS?",
+        answer: "Amerikaanse bedrijven dragen vaak bij aan politieke campagnes die klimaatinitiatieven en sociale vooruitgang tegenwerken. Door bewuster te winkelen kun je voorkomen dat je dit systeem steunt."
+      },
+      {
+        question: "Hoe kan ik bijdragen aan de missie?",
+        answer: "Naast het gebruik van de app kun je: <br>- UdenUSA delen met vrienden en familie zodat meer mensen weloverwogen keuzes kunnen maken. <br>- Ons feedback geven over hoe we de app nog beter kunnen maken. <br>- Doorgaan als PRO-lid en zo de doorlopende ontwikkeling en nieuwe functies ondersteunen."
+      },
+      {
+        question: "Hoe kan ik contact opnemen voor ondersteuning of feedback?",
+        answer: "Je kunt altijd een e-mail sturen naar info@nonusa.org. We doen ons best om zo snel mogelijk te antwoorden."
+      },
+      {
+        question: "Zijn de scanresultaten altijd 100% nauwkeurig?",
+        answer: "De meeste scans leveren nauwkeurige resultaten dankzij onze continu bijgewerkte gegevens. In zeldzame gevallen kunnen er kleine afwijkingen zijn, maar we werken voortdurend om ervoor te zorgen dat je altijd de meest betrouwbare informatie krijgt."
+      }
+    ],
+
+    // Footer
+    privacyPolicy: "Privacybeleid",
+    termsOfService: "Gebruiksvoorwaarden",
+    pressKit: "Perskit",
+
+    // App ETA Section
+    etaTitle: "App Status",
+    etaWeb: "Webapp",
+    etaWebStatus: "Nu beschikbaar",
+    etaWebDate: "Uitgebracht: 25 januari 2026",
+    etaWebMarkets: "Wereldwijd",
+    etaIos: "iOS/Apple",
+    etaIosStatus: "Nu beschikbaar",
+    etaIosDate: "Uitgebracht: 19 januari 2026",
+    etaIosMarkets: "Wereldwijd",
+    etaAndroid: "Android",
+    etaAndroidStatus: "Nu beschikbaar",
+    etaAndroidDate: "Uitgebracht: 27 januari 2026",
+    etaAndroidMarkets: "Wereldwijd",
+
+    // Newsletter
+    newsletterTitle: "Ontvang Nieuws, Functies & Prijzen",
+    newsletterDescription: "Ontvang meldingen over nieuwe functies, belangrijke updates en winacties van UdenUSA samen met 2.000+ andere abonnees.",
+    newsletterPlaceholder: "jan@email.nl",
+    newsletterButton: "Aanmelden",
+    newsletterDisclaimer: "We sturen alleen relevante updates. Geen spam.",
+    newsletterEmailHint: "Voer je e-mailadres in om je aan te melden. Je kunt je altijd afmelden.",
+    newsletterErrorMessage: "Je aanmelding kon niet worden opgeslagen. Probeer het opnieuw.",
+    newsletterSuccessMessage: "Je aanmelding is gelukt.",
+
+    // Press Kit page
+    backToHome: "← Terug naar homepagina"
   }
 } as const;
 

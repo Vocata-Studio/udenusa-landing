@@ -10,6 +10,7 @@ const languages: { code: Language; label: string; flag: string }[] = [
   { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
   { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
 ];
 
 export default function LanguageSwitcher() {
