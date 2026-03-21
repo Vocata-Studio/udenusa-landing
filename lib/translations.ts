@@ -107,10 +107,15 @@ export const translations = {
     newsletterErrorMessage: "Din tilmelding kunne ikke gemmes. Prøv igen.",
     newsletterSuccessMessage: "Din tilmelding er gennemført.",
      
+    // Vocata Studio CTA
+    vocataHeading: "Har du brug for en hjemmeside eller app?",
+    vocataSubheading: "(Fra skaberne bag UdenUSA)",
+    vocataButton: "Besøg Vocata Studio",
+
     // Press Kit page
     backToHome: "← Tilbage til forsiden"
   },
-  
+
   en: {
     // Meta
     pageTitle: "UdenUSA - Find alternatives to American products",
@@ -219,6 +224,11 @@ export const translations = {
     newsletterErrorMessage: "Your subscription could not be saved. Please try again.",
     newsletterSuccessMessage: "Your subscription has been successful.",
      
+    // Vocata Studio CTA
+    vocataHeading: "Need a website or app?",
+    vocataSubheading: "(From the creators behind UdenUSA)",
+    vocataButton: "Visit Vocata Studio",
+
     // Press Kit page
     backToHome: "← Back to home page"
   },
@@ -343,6 +353,11 @@ export const translations = {
       "Gib deine E-Mail-Adresse ein, um dich anzumelden. Du kannst dich jederzeit abmelden.",
     newsletterErrorMessage: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.",
     newsletterSuccessMessage: "Deine Anmeldung war erfolgreich.",
+
+    // Vocata Studio CTA
+    vocataHeading: "Brauchst du eine Website oder App?",
+    vocataSubheading: "(Von den Machern hinter UdenUSA)",
+    vocataButton: "Vocata Studio besuchen",
 
     // Press Kit page
     backToHome: "← Zur Startseite"
@@ -469,6 +484,11 @@ export const translations = {
     newsletterErrorMessage: "Ton inscription n'a pas pu être enregistrée. Réessaie.",
     newsletterSuccessMessage: "Ton inscription a bien été prise en compte.",
 
+    // Vocata Studio CTA
+    vocataHeading: "Besoin d'un site web ou d'une app ?",
+    vocataSubheading: "(Par les créateurs derrière UdenUSA)",
+    vocataButton: "Visiter Vocata Studio",
+
     // Press Kit page
     backToHome: "← Retour à l'accueil"
   },
@@ -594,6 +614,11 @@ export const translations = {
     newsletterErrorMessage: "No se pudo guardar tu suscripción. Inténtalo de nuevo.",
     newsletterSuccessMessage: "Tu suscripción se ha realizado correctamente.",
 
+    // Vocata Studio CTA
+    vocataHeading: "¿Necesitas una web o una app?",
+    vocataSubheading: "(De los creadores detrás de UdenUSA)",
+    vocataButton: "Visitar Vocata Studio",
+
     // Press Kit page
     backToHome: "← Volver al inicio"
   },
@@ -705,6 +730,11 @@ export const translations = {
     newsletterEmailHint: "Voer je e-mailadres in om je aan te melden. Je kunt je altijd afmelden.",
     newsletterErrorMessage: "Je aanmelding kon niet worden opgeslagen. Probeer het opnieuw.",
     newsletterSuccessMessage: "Je aanmelding is gelukt.",
+
+    // Vocata Studio CTA
+    vocataHeading: "Een website of app nodig?",
+    vocataSubheading: "(Van de makers achter UdenUSA)",
+    vocataButton: "Bezoek Vocata Studio",
 
     // Press Kit page
     backToHome: "← Terug naar homepagina"

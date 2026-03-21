@@ -272,6 +272,20 @@ export default function Home() {
         </div>
 
         <AppETA />
+
+        <a
+          href="https://vocata.studio"
+          className="vocata-badge"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg className="vocata-badge-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 13L13 5M13 5H6M13 5V12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          <span className="vocata-badge-label">Vocata Studio</span>
+          <span className="vocata-badge-heading">{t.vocataHeading}</span>
+          <span className="vocata-badge-sub">{t.vocataSubheading}</span>
+        </a>
       </header>
 
       <Newsletter />
