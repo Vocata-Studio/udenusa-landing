@@ -13,5 +13,12 @@ on:
 jobs:
   claude:
     uses: Vocata-Studio/shared-workflows/.github/workflows/claude.yml@main
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+      actions: read
     secrets:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
