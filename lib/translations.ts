@@ -23,6 +23,9 @@ export const translations = {
 
     // Press mentions
     pressTitle: "Omtalt verden over",
+
+    // Globe / reach
+    globeTitle: "125k+ downloads på tværs af 98 lande",
     
     // Problem section
     problemTitle: "Hvorfor undgå amerikanske produkter?",
@@ -140,6 +143,9 @@ export const translations = {
 
     // Press mentions
     pressTitle: "Featured across the world",
+
+    // Globe / reach
+    globeTitle: "125k+ downloads across 98 countries",
     
     // Problem section
     problemTitle: "Why avoid American products?",
@@ -259,6 +265,9 @@ export const translations = {
 
     // Press mentions
     pressTitle: "Weltweit vorgestellt",
+
+    // Globe / reach
+    globeTitle: "125k+ Downloads in 98 Ländern",
 
     // Problem section
     problemTitle: "Warum amerikanische Produkte meiden?",
@@ -390,6 +399,9 @@ export const translations = {
     // Press mentions
     pressTitle: "Présenté dans le monde entier",
 
+    // Globe / reach
+    globeTitle: "125k+ téléchargements dans 98 pays",
+
     // Problem section
     problemTitle: "Pourquoi éviter les produits américains ?",
     problemText:
@@ -520,6 +532,9 @@ export const translations = {
     // Press mentions
     pressTitle: "Destacado en todo el mundo",
 
+    // Globe / reach
+    globeTitle: "125k+ descargas en 98 países",
+
     // Problem section
     problemTitle: "¿Por qué evitar productos estadounidenses?",
     problemText:
@@ -647,6 +662,9 @@ export const translations = {
 
     // Press mentions
     pressTitle: "Wereldwijd in het nieuws",
+
+    // Globe / reach
+    globeTitle: "125k+ downloads in 98 landen",
 
     // Problem section
     problemTitle: "Waarom Amerikaanse producten vermijden?",

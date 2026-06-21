@@ -405,6 +405,45 @@ ul li:last-child {
   font-weight: 500;
 }
 
+/* Globe / reach section */
+.globe-section {
+  max-width: 900px;
+  background: transparent;
+  text-align: center;
+  padding: 30px 20px 0;
+  overflow: hidden;
+}
+
+.globe-title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 auto;
+  max-width: 16ch;
+  background-image: linear-gradient(180deg, #ffffff 0%, #32d74b 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.globe-stage {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+.globe-canvas {
+  top: 0;
+}
+
+@media (max-width: 640px) {
+  .globe-section {
+    padding-top: 10px;
+  }
+}
+
 /* FAQ */
 .faq-item {
   margin-bottom: 15px;

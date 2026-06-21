@@ -10,6 +10,7 @@ import Newsletter from '@/components/Newsletter';
 import AppETA from '@/components/AppETA';
 import QRModal from '@/components/QRModal';
 import LogoLoop from '@/components/LogoLoop';
+import GlobeStats from '@/components/GlobeStats';
 import { useLanguage } from '@/lib/LanguageContext';
 import Script from 'next/script';
 
@@ -305,6 +306,8 @@ export default function Home() {
           ariaLabel={t.pressTitle}
         />
       </section>
+
+      <GlobeStats />
 
       <SocialIcons />
 
