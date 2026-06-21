@@ -20,18 +20,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Announcement Banner */
+/* Announcement Banner — sticky bar with a black-to-green brand gradient. */
 .announcement-banner {
-  background: linear-gradient(135deg, rgba(50, 215, 75, 0.25) 0%, rgba(40, 179, 62, 0.2) 100%);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
-  color: #f5f5f7;
+  background: linear-gradient(120deg, #0a0a0a 0%, #0f3d1d 55%, #1f9438 100%);
+  color: #ffffff;
   padding: 14px 20px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(50, 215, 75, 0.3);
+  border-bottom: 1px solid rgba(50, 215, 75, 0.35);
 }
 
 .banner-content {
@@ -52,22 +50,21 @@ body {
 }
 
 .banner-button {
-  background-color: rgba(50, 215, 75, 0.15);
-  color: #32d74b;
+  background-color: #ffffff;
+  color: #1f9438;
   padding: 8px 20px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  border: 1.5px solid rgba(50, 215, 75, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
 }
 
 .banner-button:hover {
-  background-color: rgba(50, 215, 75, 0.25);
-  border-color: rgba(50, 215, 75, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(50, 215, 75, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Header / Hero */
@@ -615,6 +612,42 @@ footer a:hover {
   transform: translateX(-50%);
   width: 160px;
   z-index: 999;
+}
+
+/* Flags-only variant — inline inside the announcement banner. */
+.language-switcher.flags-only {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: auto;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.language-switcher.flags-only .lang-btn {
+  width: auto;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 22px 6px 10px;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.language-switcher.flags-only .lang-btn.active::after {
+  right: 8px;
+  font-size: 0.6rem;
+}
+
+.language-switcher.flags-only .lang-dropdown {
+  width: 100%;
+  min-width: 100%;
+}
+
+.language-switcher.flags-only .lang-dropdown .lang-btn {
+  background-color: rgba(17, 17, 17, 0.97);
 }
 
 .lang-btn {

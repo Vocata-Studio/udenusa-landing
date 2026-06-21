@@ -155,6 +155,7 @@ export default function Home() {
     <>
       <div className="announcement-banner">
         <div className="banner-content">
+          <LanguageSwitcher variant="flags" />
           <span className="banner-text">{t.bannerText}</span>
           <a href="https://app.udenusa.dk" className="banner-button" target="_blank" rel="noreferrer">
             {t.bannerButton}
@@ -163,7 +164,6 @@ export default function Home() {
       </div>
 
       <header>
-        <LanguageSwitcher />
         <div className="app-screenshots">
           <Image
             src="/images/screenshot-american-phonmockup.png"

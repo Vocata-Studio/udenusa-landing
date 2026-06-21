@@ -13,10 +13,15 @@ const languages: { code: Language; label: string; flag: string }[] = [
   { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
 ];
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({
+  variant = 'default',
+}: {
+  variant?: 'default' | 'flags';
+}) {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const flagsOnly = variant === 'flags';
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -33,14 +38,15 @@ export default function LanguageSwitcher() {
 
   return (
     <div
-      className={`language-switcher${open ? ' open' : ''}`}
+      className={`language-switcher${flagsOnly ? ' flags-only' : ''}${open ? ' open' : ''}`}
       ref={ref}
     >
       <button
         className="lang-btn active"
         onClick={() => setOpen(!open)}
+        aria-label={flagsOnly ? active.label : undefined}
       >
-        {active.flag} {active.label}
+        {flagsOnly ? active.flag : `${active.flag} ${active.label}`}
       </button>
       <div className="lang-dropdown">
         {others.map((lang, i) => (
@@ -51,8 +57,9 @@ export default function LanguageSwitcher() {
               setLanguage(lang.code);
               setOpen(false);
             }}
+            aria-label={flagsOnly ? lang.label : undefined}
           >
-            {lang.flag} {lang.label}
+            {flagsOnly ? lang.flag : `${lang.flag} ${lang.label}`}
           </button>
         ))}
       </div>
