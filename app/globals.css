@@ -20,9 +20,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Announcement Banner — sticky bar with a black-to-green brand gradient. */
+/* Announcement Banner — rich emerald base with a focused glow behind the content. */
 .announcement-banner {
-  background: linear-gradient(120deg, #0a0a0a 0%, #0f3d1d 55%, #1f9438 100%);
+  background:
+    radial-gradient(90% 100% at 50% 0%, rgba(56, 200, 88, 0.4) 0%, rgba(34, 150, 64, 0) 55%),
+    linear-gradient(180deg, #103d20 0%, #07210f 100%);
   color: #ffffff;
   padding: 14px 20px;
   text-align: center;
@@ -631,23 +633,45 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 22px 6px 10px;
+  padding: 6px 28px 6px 14px;
   font-size: 1.1rem;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Active toggle styled like the "Prøv nu" banner button — whitish, bigger. */
+.language-switcher.flags-only .lang-btn.active {
+  background-color: #ffffff;
+  color: #1f9438;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.language-switcher.flags-only .lang-btn.active:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .language-switcher.flags-only .lang-btn.active::after {
-  right: 8px;
-  font-size: 0.6rem;
+  right: 10px;
+  font-size: 0.65rem;
 }
 
 .language-switcher.flags-only .lang-dropdown {
   width: 100%;
   min-width: 100%;
+  background-color: #e8e8ed;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
 }
 
 .language-switcher.flags-only .lang-dropdown .lang-btn {
-  background-color: rgba(17, 17, 17, 0.97);
+  background-color: transparent;
+}
+
+.language-switcher.flags-only .lang-dropdown .lang-btn:hover {
+  background-color: #d8d8df;
 }
 
 .lang-btn {
@@ -1425,9 +1449,12 @@ hr {
     gap: 12px;
   }
 
+  /* Text on top (full width), flag picker + button side by side below. */
   .banner-text {
     font-size: 1rem;
     line-height: 1.4;
+    order: -1;
+    flex-basis: 100%;
   }
 
   .banner-button {
