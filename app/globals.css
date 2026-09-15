@@ -20,18 +20,19 @@ body {
   overflow-x: hidden;
 }
 
-/* Announcement Banner — rich emerald base with a focused glow behind the content. */
+/* Announcement Banner — frosted glass bar over whatever scrolls beneath it. */
 .announcement-banner {
-  background:
-    radial-gradient(90% 100% at 50% 0%, rgba(56, 200, 88, 0.4) 0%, rgba(34, 150, 64, 0) 55%),
-    linear-gradient(180deg, #103d20 0%, #07210f 100%);
+  background-color: rgba(10, 20, 12, 0.6);
+  background-image: linear-gradient(rgba(50, 215, 75, 0.12), rgba(50, 215, 75, 0.08));
+  /* The CSS processor adds the Safari prefix; a manual prefix drops the standard property. */
+  backdrop-filter: blur(20px) saturate(180%);
   color: #ffffff;
   padding: 14px 20px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(50, 215, 75, 0.35);
+  border-bottom: 1px solid rgba(50, 215, 75, 0.18);
 }
 
 .banner-content {
@@ -75,7 +76,6 @@ header {
   padding: 80px 20px 40px;
   background-color: rgba(17, 17, 17, 0.8);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   margin-bottom: 40px;
   position: relative;
   overflow: visible;
