@@ -585,9 +585,22 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   color: #666;
-  padding: 30px 0;
+  padding: 30px 20px;
   border-top: 1px solid #222;
   margin-top: 40px;
+}
+
+/* Wide enough to keep the signature and the links on one line; flex so the two
+   groups wrap as whole units instead of breaking mid-list. */
+.footer-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 2.2;
 }
 
 footer a {
@@ -597,6 +610,63 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Vocata Studio signature — sits inline in the footer line, in brand green. */
+.vocata-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vocata-signature:hover {
+  color: #32d74b;
+  text-decoration: none;
+}
+
+/* The logo is a flat mark on transparency, so mask it and paint the brand green
+   through the alpha channel — stays crisp at any size and follows hover. */
+.vocata-signature-logo {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background-color: #32d74b;
+  mask-image: url("/vocata-signature.png");
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+.vocata-signature-text {
+  font-weight: 500;
+}
+
+/* Sets the credit apart from the site's own footer links. */
+.footer-divider {
+  color: #3a3a3a;
+}
+
+/* Keep multi-word link labels whole so they never break across lines. */
+.footer-links a {
+  white-space: nowrap;
+}
+
+/* Below this width the longest locale (es, 906px) can no longer hold both groups
+   on one row, so drop the pipe — it would otherwise trail a half-empty line — and
+   let the column gap carry the same separation. */
+@media (max-width: 960px) {
+  .footer-line {
+    column-gap: 44px;
+  }
+
+  .footer-divider {
+    display: none;
+  }
 }
 
 /* Logo */
@@ -1329,6 +1399,15 @@ hr {
 @media (max-width: 768px) {
   header {
     padding: 60px 20px 30px;
+  }
+
+  .footer-line {
+    line-height: 2.4;
+  }
+
+  .vocata-signature-logo {
+    width: 20px;
+    height: 20px;
   }
 
   header h1 {

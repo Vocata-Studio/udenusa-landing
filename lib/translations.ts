@@ -84,6 +84,7 @@ export const translations = {
     privacyPolicy: "Privatlivspolitik",
     termsOfService: "Brugsbetingelser",
     pressKit: "Pressekit",
+    vocataSignature: "Designet & Udviklet af Vocata Studio",
     
     // App ETA Section
     etaTitle: "App Status",
@@ -204,6 +205,7 @@ export const translations = {
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     pressKit: "Press Kit",
+    vocataSignature: "Designed & Developed by Vocata Studio",
 
     // App ETA Section
     etaTitle: "App Status",
@@ -335,6 +337,7 @@ export const translations = {
     privacyPolicy: "Datenschutzerklärung",
     termsOfService: "Nutzungsbedingungen",
     pressKit: "Pressekit",
+    vocataSignature: "Gestaltet & Entwickelt von Vocata Studio",
 
     // App ETA Section
     etaTitle: "App-Status & ETA",
@@ -468,6 +471,7 @@ export const translations = {
     privacyPolicy: "Politique de confidentialité",
     termsOfService: "Conditions d'utilisation",
     pressKit: "Kit presse",
+    vocataSignature: "Conçu & Développé par Vocata Studio",
 
     // App ETA Section
     etaTitle: "Statut de l'app & ETA",
@@ -601,6 +605,7 @@ export const translations = {
     privacyPolicy: "Política de privacidad",
     termsOfService: "Términos de servicio",
     pressKit: "Kit de prensa",
+    vocataSignature: "Diseñado y Desarrollado por Vocata Studio",
 
     // App ETA Section
     etaTitle: "Estado de la app & ETA",
@@ -723,6 +728,7 @@ export const translations = {
     privacyPolicy: "Privacybeleid",
     termsOfService: "Gebruiksvoorwaarden",
     pressKit: "Perskit",
+    vocataSignature: "Ontworpen & Ontwikkeld door Vocata Studio",
 
     // App ETA Section
     etaTitle: "App Status",
