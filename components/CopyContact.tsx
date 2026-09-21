@@ -41,7 +41,9 @@ async function writeToClipboard(text: string): Promise<boolean> {
 type CopyContactProps = {
   /** The value put on the clipboard, and shown unless `label` overrides it. */
   value: string;
-  /** Subtext to the right of the value, e.g. "kopier". */
+  /** Verb for the accessible name, e.g. "kopier" — the button carries no
+   * visible affordance, so this is the only thing telling assistive tech that
+   * activating it copies rather than navigates. */
   copyLabel: string;
   /** Toast confirmation, e.g. "Kopieret". */
   copiedLabel: string;
@@ -86,9 +88,6 @@ export default function CopyContact({
         aria-label={`${label ?? value} – ${copyLabel}`}
       >
         <span className="copy-contact-value">{label ?? value}</span>
-        <span className="copy-contact-hint" aria-hidden="true">
-          – {copyLabel}
-        </span>
       </button>
 
       {/* The live region stays mounted and only its contents change: screen

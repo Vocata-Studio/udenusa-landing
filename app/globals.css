@@ -1826,19 +1826,6 @@ html[lang="nl"] .not-found-copy-block[data-lang="nl"] {
   text-decoration: underline;
 }
 
-.copy-contact-hint {
-  color: #888;
-  font-size: 0.85em;
-  font-weight: 400;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.copy-contact:hover .copy-contact-hint,
-.copy-contact:focus-visible .copy-contact-hint {
-  color: #aaa;
-}
-
 .copy-contact:active {
   opacity: 0.7;
 }
