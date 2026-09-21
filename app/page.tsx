@@ -171,6 +171,7 @@ export default function Home() {
             width={250}
             height={500}
             className="screenshot left"
+            priority
           />
           <Image
             src="/images/screenshot-nonamerican-phonemockup.png"
@@ -178,6 +179,7 @@ export default function Home() {
             width={250}
             height={500}
             className="screenshot right"
+            priority
           />
         </div>
         <h1>
@@ -188,6 +190,7 @@ export default function Home() {
             width={70}
             height={70}
             className="logo-image"
+            loading="eager"
           />
         </h1>
         <p className="tagline">{t.tagline}</p>
@@ -244,6 +247,7 @@ export default function Home() {
             height={180}
             className="qr-code-img"
             onClick={() => setQrModalOpen(true)}
+            unoptimized
           />
           <div className="qr-code-text">{t.qrCode}</div>
         </div>

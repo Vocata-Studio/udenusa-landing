@@ -473,6 +473,7 @@ function EnglishContent({ backToHome }: { backToHome: string }) {
               width={150}
               height={150}
               style={{ verticalAlign: 'middle' }}
+              unoptimized
             />
           </li>
         </ul>

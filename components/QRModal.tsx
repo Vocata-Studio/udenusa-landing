@@ -19,6 +19,9 @@ export default function QRModal({ isOpen, onClose }: QRModalProps) {
           width={300}
           height={300}
           className="qr-code-img-expanded"
+          // Lossy re-encoding can put ringing artifacts on a QR's edges, and
+          // the source PNG is already tiny, so there is nothing to gain.
+          unoptimized
         />
         <button className="close-qr-modal" onClick={onClose}>
           ✕
