@@ -13,7 +13,6 @@ import LogoLoop from '@/components/LogoLoop';
 import GlobeStats from '@/components/GlobeStats';
 import { useLanguage } from '@/lib/LanguageContext';
 import { track } from '@vercel/analytics';
-import Script from 'next/script';
 
 const AndroidIcon = () => (
   <svg
@@ -337,37 +336,68 @@ export default function Home() {
 
       <QRModal isOpen={qrModalOpen} onClose={() => setQrModalOpen(false)} />
 
-      {/* Structured Data */}
-      <Script
-        id="structured-data"
+      {/* Structured Data. Rendered inline (not via next/script) so it is
+          present in the server HTML — crawlers must not have to execute JS.
+          Language follows the active translation. */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'MobileApplication',
-            name: 'UdenUSA',
-            description:
-              'UdenUSA hjælper dig med at identificere amerikanske produkter og finder alternativer fra resten af verden.',
-            operatingSystem: ['iOS', 'Android', 'Web'],
-            applicationCategory: 'ShoppingApplication',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'DKK',
-            },
-            author: {
-              '@type': 'Organization',
-              name: 'UdenUSA',
-              url: 'https://udenusa.dk',
-            },
-            screenshot:
-              'https://udenusa.dk/images/screenshot-nonamerican-phonemockup.png',
-            softwareVersion: '1.0',
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              ratingCount: '25',
-            },
+            '@graph': [
+              {
+                '@type': 'Organization',
+                '@id': 'https://udenusa.dk/#organization',
+                name: 'UdenUSA',
+                url: 'https://udenusa.dk/',
+                logo: 'https://udenusa.dk/images/UdenUSAtransparent.png',
+                sameAs: [
+                  'https://www.instagram.com/udenusa.app/',
+                  'https://www.facebook.com/people/Udenusa/61574231352209/',
+                  'https://x.com/udenusa',
+                  'https://tiktok.com/@udenusa',
+                  'https://linkedin.com/company/udenusa',
+                ],
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'https://udenusa.dk/#website',
+                name: 'UdenUSA',
+                url: 'https://udenusa.dk/',
+                inLanguage: language,
+                publisher: { '@id': 'https://udenusa.dk/#organization' },
+              },
+              {
+                '@type': 'MobileApplication',
+                '@id': 'https://udenusa.dk/#app',
+                name: 'UdenUSA',
+                description: t.description,
+                operatingSystem: ['iOS', 'Android', 'Web'],
+                applicationCategory: 'ShoppingApplication',
+                offers: {
+                  '@type': 'Offer',
+                  price: '0',
+                  priceCurrency: 'DKK',
+                },
+                author: { '@id': 'https://udenusa.dk/#organization' },
+                screenshot:
+                  'https://udenusa.dk/images/screenshot-nonamerican-phonemockup.png',
+                softwareVersion: '1.0',
+              },
+              {
+                '@type': 'FAQPage',
+                '@id': 'https://udenusa.dk/#faq',
+                inLanguage: language,
+                mainEntity: t.faqItems.map((item) => ({
+                  '@type': 'Question',
+                  name: item.question,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: item.answer,
+                  },
+                })),
+              },
+            ],
           }),
         }}
       />
