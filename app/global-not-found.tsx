@@ -5,7 +5,7 @@ import {
   DANISH_LOCALE,
   INTERNATIONAL_LOCALES,
   LOCALES,
-  pathFor,
+  urlFor,
   X_DEFAULT_LOCALE,
 } from '@/lib/i18n';
 import { translations } from '@/lib/translations';
@@ -23,9 +23,9 @@ const inter = Inter({ subsets: ['latin'] });
  * its own document instead (Next's global-not-found convention). It is also
  * prerendered once and served statically, so it cannot know at render time
  * which domain or locale the visitor came from. Every locale's copy is in the
- * HTML, and a tiny inline script picks one from the URL before first paint by
- * setting <html lang>, which the stylesheet keys on. Without scripting the
- * page stays in English, the site's x-default.
+ * HTML, and a tiny inline script picks one from the URL and the browser's own
+ * language before first paint by setting <html lang>, which the stylesheet
+ * keys on. Without scripting the page stays in English, the site's x-default.
  */
 
 export const metadata: Metadata = {
@@ -37,9 +37,16 @@ export const metadata: Metadata = {
 };
 
 // Runs in <head>, before the body is parsed, so the right copy is visible on
-// first paint. A locale prefix in the path wins; otherwise the Danish domain
-// gets Danish and everything else gets the x-default.
-const pickLocale = `(function(){try{var m=location.pathname.match(/^\\/(${INTERNATIONAL_LOCALES.join('|')})(\\/|$)/);var l=m?m[1]:/udenusa/.test(location.hostname)?'${DANISH_LOCALE}':'${X_DEFAULT_LOCALE}';document.documentElement.lang=l;}catch(e){}})();`;
+// first paint. A locale prefix in the path wins, then the visitor's own browser
+// languages, and only then the domain — Danish on udenusa.dk, the x-default
+// everywhere else.
+//
+// Choosing on browser language is safe on this page specifically: the 404 is
+// noindex, so there is no crawler to mislead. The indexable pages must not do
+// this — see LanguageBanner for why they offer a language instead of switching
+// to it. A link shared across a border lands on the wrong domain more often
+// than not, and the 404 is exactly where that shows up.
+const pickLocale = `(function(){try{var L=${JSON.stringify(LOCALES)};var m=location.pathname.match(/^\\/(${INTERNATIONAL_LOCALES.join('|')})(\\/|$)/);var l=m&&m[1];if(!l){var c=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<c.length&&!l;i++){var t=String(c[i]).toLowerCase().split('-')[0];if(L.indexOf(t)>-1)l=t;}}if(!l)l=/udenusa/.test(location.hostname)?'${DANISH_LOCALE}':'${X_DEFAULT_LOCALE}';document.documentElement.lang=l;}catch(e){}})();`;
 
 export default function GlobalNotFound() {
   return (
@@ -75,7 +82,10 @@ export default function GlobalNotFound() {
               >
                 <h1>{t.notFoundTitle}</h1>
                 <p className="not-found-copy">{t.notFoundBody}</p>
-                <a href={pathFor(locale, '/')} className="cta">
+                {/* Absolute: the picked locale's homepage is often on the
+                    other domain, and a relative /en/ would bounce through a
+                    cross-origin redirect to get there. */}
+                <a href={urlFor(locale, '/')} className="cta">
                   {t.notFoundCta}
                 </a>
                 <p className="not-found-note">
