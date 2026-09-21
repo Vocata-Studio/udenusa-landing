@@ -8,7 +8,7 @@ import {
   pathFor,
   X_DEFAULT_LOCALE,
 } from '@/lib/i18n';
-import { translations, type Language } from '@/lib/translations';
+import { translations } from '@/lib/translations';
 import CopyContact from '@/components/CopyContact';
 import { CONTACT_EMAIL } from '@/lib/contact';
 import './globals.css';
@@ -33,54 +33,6 @@ export const metadata: Metadata = {
   description: 'The page you are looking for does not exist.',
   icons: {
     icon: '/images/UdenUSAtransparent.png',
-  },
-};
-
-const copy: Record<
-  Language,
-  { title: string; body: string; cta: string; note: string; mistake: string }
-> = {
-  da: {
-    title: 'Siden findes ikke',
-    body: 'Siden er flyttet, slettet eller har aldrig eksisteret. Tjek adressen, eller gå tilbage til forsiden.',
-    cta: 'Tilbage til forsiden',
-    mistake: 'Tror du, det er en fejl?',
-    note: 'Skriv til',
-  },
-  en: {
-    title: 'Page not found',
-    body: 'This page has moved, been removed or never existed. Check the address or head back to the homepage.',
-    cta: 'Back to homepage',
-    mistake: 'Think this is a mistake?',
-    note: 'Email',
-  },
-  de: {
-    title: 'Seite nicht gefunden',
-    body: 'Diese Seite wurde verschoben, gelöscht oder hat nie existiert. Prüfe die Adresse oder geh zurück zur Startseite.',
-    cta: 'Zur Startseite',
-    mistake: 'Glaubst du, das ist ein Fehler?',
-    note: 'Schreib an',
-  },
-  fr: {
-    title: 'Page introuvable',
-    body: "Cette page a été déplacée, supprimée ou n'a jamais existé. Vérifiez l'adresse ou revenez à l'accueil.",
-    cta: "Retour à l'accueil",
-    mistake: "Vous pensez qu'il s'agit d'une erreur ?",
-    note: 'Écrivez à',
-  },
-  es: {
-    title: 'Página no encontrada',
-    body: 'Esta página se ha movido, se ha eliminado o nunca existió. Comprueba la dirección o vuelve al inicio.',
-    cta: 'Volver al inicio',
-    mistake: '¿Crees que es un error?',
-    note: 'Escríbenos a',
-  },
-  nl: {
-    title: 'Pagina niet gevonden',
-    body: 'Deze pagina is verplaatst, verwijderd of heeft nooit bestaan. Controleer het adres of ga terug naar de homepagina.',
-    cta: 'Terug naar homepagina',
-    mistake: 'Denk je dat dit een fout is?',
-    note: 'Mail naar',
   },
 };
 
@@ -114,24 +66,24 @@ export default function GlobalNotFound() {
           </p>
 
           {LOCALES.map((locale) => {
-            const t = copy[locale];
+            const t = translations[locale];
             return (
               <div
                 key={locale}
                 className="not-found-copy-block"
                 data-lang={locale}
               >
-                <h1>{t.title}</h1>
-                <p className="not-found-copy">{t.body}</p>
+                <h1>{t.notFoundTitle}</h1>
+                <p className="not-found-copy">{t.notFoundBody}</p>
                 <a href={pathFor(locale, '/')} className="cta">
-                  {t.cta}
+                  {t.notFoundCta}
                 </a>
                 <p className="not-found-note">
-                  {t.mistake} {t.note}{' '}
+                  {t.notFoundMistake} {t.notFoundNote}{' '}
                   <CopyContact
                     value={CONTACT_EMAIL}
-                    copyLabel={translations[locale].copyLabel}
-                    copiedLabel={translations[locale].copiedLabel}
+                    copyLabel={t.copyLabel}
+                    copiedLabel={t.copiedLabel}
                   />
                 </p>
               </div>

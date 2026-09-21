@@ -127,6 +127,13 @@ export const translations = {
     downloadMetaTitle: "Download UdenUSA",
     downloadMetaDescription: "Download UdenUSA til iOS eller Android, eller brug webappen direkte.",
 
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Siden findes ikke",
+    notFoundBody: "Siden er flyttet, slettet eller har aldrig eksisteret. Tjek adressen, eller gå tilbage til forsiden.",
+    notFoundCta: "Tilbage til forsiden",
+    notFoundMistake: "Tror du, det er en fejl?",
+    notFoundNote: "Skriv til",
+
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "kopier",
     copiedLabel: "Kopieret",
@@ -262,6 +269,13 @@ export const translations = {
     downloadNote: "On mobile we send you straight to the right store.",
     downloadMetaTitle: "Download UdenUSA",
     downloadMetaDescription: "Download UdenUSA for iOS or Android, or use the web app directly.",
+
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Page not found",
+    notFoundBody: "This page has moved, been removed or never existed. Check the address or head back to the homepage.",
+    notFoundCta: "Back to homepage",
+    notFoundMistake: "Think this is a mistake?",
+    notFoundNote: "Email",
 
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "copy",
@@ -412,6 +426,13 @@ export const translations = {
     downloadMetaTitle: "UdenUSA herunterladen",
     downloadMetaDescription: "Lade UdenUSA für iOS oder Android herunter oder nutze direkt die Web-App.",
 
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Seite nicht gefunden",
+    notFoundBody: "Diese Seite wurde verschoben, gelöscht oder hat nie existiert. Prüfe die Adresse oder geh zurück zur Startseite.",
+    notFoundCta: "Zur Startseite",
+    notFoundMistake: "Glaubst du, das ist ein Fehler?",
+    notFoundNote: "Schreib an",
+
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "kopieren",
     copiedLabel: "Kopiert",
@@ -560,6 +581,13 @@ export const translations = {
     downloadNote: "Sur mobile, on t'envoie directement vers la bonne boutique.",
     downloadMetaTitle: "Télécharger UdenUSA",
     downloadMetaDescription: "Télécharge UdenUSA pour iOS ou Android, ou utilise directement la web app.",
+
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Page introuvable",
+    notFoundBody: "Cette page a été déplacée, supprimée ou n'a jamais existé. Vérifiez l'adresse ou revenez à l'accueil.",
+    notFoundCta: "Retour à l'accueil",
+    notFoundMistake: "Vous pensez qu'il s'agit d'une erreur ?",
+    notFoundNote: "Écrivez à",
 
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "copier",
@@ -710,6 +738,13 @@ export const translations = {
     downloadMetaTitle: "Descargar UdenUSA",
     downloadMetaDescription: "Descarga UdenUSA para iOS o Android, o usa directamente la web app.",
 
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Página no encontrada",
+    notFoundBody: "Esta página se ha movido, se ha eliminado o nunca existió. Comprueba la dirección o vuelve al inicio.",
+    notFoundCta: "Volver al inicio",
+    notFoundMistake: "¿Crees que es un error?",
+    notFoundNote: "Escríbenos a",
+
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "copiar",
     copiedLabel: "Copiado",
@@ -845,6 +880,13 @@ export const translations = {
     downloadNote: "Op mobiel sturen we je direct door naar de juiste store.",
     downloadMetaTitle: "UdenUSA downloaden",
     downloadMetaDescription: "Download UdenUSA voor iOS of Android, of gebruik direct de webapp.",
+
+    // 404 page (rendered outside LanguageProvider, read directly)
+    notFoundTitle: "Pagina niet gevonden",
+    notFoundBody: "Deze pagina is verplaatst, verwijderd of heeft nooit bestaan. Controleer het adres of ga terug naar de homepagina.",
+    notFoundCta: "Terug naar homepagina",
+    notFoundMistake: "Denk je dat dit een fout is?",
+    notFoundNote: "Mail naar",
 
     // Contact details (copied to the clipboard, never a mailto:)
     copyLabel: "kopiëren",
