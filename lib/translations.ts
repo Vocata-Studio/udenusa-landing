@@ -2,6 +2,8 @@ export const translations = {
   da: {
     // Meta
     pageTitle: "UdenUSA - Find alternativer til amerikanske produkter",
+    viewInLanguage: "Se denne side på dansk",
+    viewInLanguageClose: "Luk",
 
     // Banner
     bannerText: "🎉 Android appen er nu ude! Hent UdenUSA på Play Store 🎉",
@@ -123,6 +125,8 @@ export const translations = {
   en: {
     // Meta
     pageTitle: "UdenUSA - Find alternatives to American products",
+    viewInLanguage: "View this page in English",
+    viewInLanguageClose: "Close",
 
     // Banner
     bannerText: "🎉 Android app now available! Get UdenUSA on Play Store",
@@ -244,6 +248,8 @@ export const translations = {
   de: {
     // Meta
     pageTitle: "UdenUSA - Finde Alternativen zu amerikanischen Produkten",
+    viewInLanguage: "Diese Seite auf Deutsch ansehen",
+    viewInLanguageClose: "Schließen",
 
     // Banner
     bannerText: "🎉 Die Android-App ist jetzt da! Hol dir UdenUSA im Play Store",
@@ -378,6 +384,8 @@ export const translations = {
   fr: {
     // Meta
     pageTitle: "UdenUSA - Trouve des alternatives aux produits américains",
+    viewInLanguage: "Voir cette page en français",
+    viewInLanguageClose: "Fermer",
 
     // Banner
     bannerText: "🎉 L'app Android est dispo ! Télécharge UdenUSA sur le Play Store",
@@ -512,6 +520,8 @@ export const translations = {
   es: {
     // Meta
     pageTitle: "UdenUSA - Encuentra alternativas a productos estadounidenses",
+    viewInLanguage: "Ver esta página en español",
+    viewInLanguageClose: "Cerrar",
 
     // Banner
     bannerText: "🎉 ¡La app de Android ya está disponible! Descarga UdenUSA en Play Store",
@@ -646,6 +656,8 @@ export const translations = {
   nl: {
     // Meta
     pageTitle: "UdenUSA - Vind alternatieven voor Amerikaanse producten",
+    viewInLanguage: "Bekijk deze pagina in het Nederlands",
+    viewInLanguageClose: "Sluiten",
 
     // Banner
     bannerText: "🎉 De Android-app is nu beschikbaar! Download UdenUSA in de Play Store",

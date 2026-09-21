@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
+import { localizedRouteFromPath, urlFor } from '@/lib/i18n';
 import { Language } from '@/lib/translations';
 
 const languages: { code: Language; label: string; flag: string }[] = [
@@ -18,7 +20,8 @@ export default function LanguageSwitcher({
 }: {
   variant?: 'default' | 'flags';
 }) {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const flagsOnly = variant === 'flags';
@@ -36,6 +39,9 @@ export default function LanguageSwitcher({
   const active = languages.find((l) => l.code === language)!;
   const others = languages.filter((l) => l.code !== language);
 
+  // Pages that exist in Danish only fall back to the translated homepage.
+  const route = localizedRouteFromPath(pathname ?? '/') ?? '/';
+
   return (
     <div
       className={`language-switcher${flagsOnly ? ' flags-only' : ''}${open ? ' open' : ''}`}
@@ -45,22 +51,25 @@ export default function LanguageSwitcher({
         className="lang-btn active"
         onClick={() => setOpen(!open)}
         aria-label={flagsOnly ? active.label : undefined}
+        aria-expanded={open}
       >
         {flagsOnly ? active.flag : `${active.flag} ${active.label}`}
       </button>
       <div className="lang-dropdown">
         {others.map((lang, i) => (
-          <button
+          // A real link, not a state change: the locale is part of the URL, and
+          // Danish lives on a different domain to the rest, so this is always a
+          // full navigation.
+          <a
             key={lang.code}
+            href={urlFor(lang.code, route)}
+            hrefLang={lang.code}
             className={`lang-btn${i === others.length - 1 ? ' last' : ''}`}
-            onClick={() => {
-              setLanguage(lang.code);
-              setOpen(false);
-            }}
+            onClick={() => setOpen(false)}
             aria-label={flagsOnly ? lang.label : undefined}
           >
             {flagsOnly ? lang.flag : `${lang.flag} ${lang.label}`}
-          </button>
+          </a>
         ))}
       </div>
     </div>

@@ -12,6 +12,7 @@ import QRModal from '@/components/QRModal';
 import LogoLoop from '@/components/LogoLoop';
 import GlobeStats from '@/components/GlobeStats';
 import { useLanguage } from '@/lib/LanguageContext';
+import { DANISH_ORIGIN, originFor, urlFor } from '@/lib/i18n';
 import { track } from '@vercel/analytics';
 
 const AndroidIcon = () => (
@@ -27,6 +28,10 @@ const AndroidIcon = () => (
 
 export default function Home() {
   const { t, language } = useLanguage();
+  // The two domains are two sites, but one organisation and one app, so only
+  // the WebSite and FAQPage nodes are per-origin.
+  const origin = originFor(language);
+  const pageUrl = urlFor(language, '/');
   const [qrModalOpen, setQrModalOpen] = useState(false);
 
   const pressMentions = [
@@ -351,9 +356,9 @@ export default function Home() {
             '@graph': [
               {
                 '@type': 'Organization',
-                '@id': 'https://udenusa.dk/#organization',
+                '@id': `${DANISH_ORIGIN}/#organization`,
                 name: 'UdenUSA',
-                url: 'https://udenusa.dk/',
+                url: `${DANISH_ORIGIN}/`,
                 logo: 'https://udenusa.dk/images/UdenUSAtransparent.png',
                 sameAs: [
                   'https://www.instagram.com/udenusa.app/',
@@ -365,15 +370,15 @@ export default function Home() {
               },
               {
                 '@type': 'WebSite',
-                '@id': 'https://udenusa.dk/#website',
+                '@id': `${origin}/#website`,
                 name: 'UdenUSA',
-                url: 'https://udenusa.dk/',
+                url: `${origin}/`,
                 inLanguage: language,
-                publisher: { '@id': 'https://udenusa.dk/#organization' },
+                publisher: { '@id': `${DANISH_ORIGIN}/#organization` },
               },
               {
                 '@type': 'MobileApplication',
-                '@id': 'https://udenusa.dk/#app',
+                '@id': `${DANISH_ORIGIN}/#app`,
                 name: 'UdenUSA',
                 description: t.description,
                 operatingSystem: ['iOS', 'Android', 'Web'],
@@ -383,14 +388,14 @@ export default function Home() {
                   price: '0',
                   priceCurrency: 'DKK',
                 },
-                author: { '@id': 'https://udenusa.dk/#organization' },
+                author: { '@id': `${DANISH_ORIGIN}/#organization` },
                 screenshot:
                   'https://udenusa.dk/images/screenshot-nonamerican-phonemockup.png',
                 softwareVersion: '1.0',
               },
               {
                 '@type': 'FAQPage',
-                '@id': 'https://udenusa.dk/#faq',
+                '@id': `${pageUrl}#faq`,
                 inLanguage: language,
                 mainEntity: t.faqItems.map((item) => ({
                   '@type': 'Question',

@@ -1542,3 +1542,33 @@ hr {
   }
 
 }
+
+/* Language suggestion banner. Shown only when the visitor's browser language
+   differs from the locale they landed on. It links rather than redirects, so
+   crawlers still reach every locale. */
+.language-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: rgba(6, 78, 59, 0.92);
+  color: #ecfdf5;
+  font-size: 0.9rem;
+}
+
+.language-suggestion a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.language-suggestion-close {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+}
