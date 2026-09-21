@@ -27,15 +27,15 @@ export default function Footer() {
 
         <span className="footer-links">
           <a href="mailto:info@nonusa.org">info@nonusa.org</a> |{' '}
-          <Link href="/privacy" className="privacy-link">
+          <Link href="/privacy/" className="privacy-link">
             {t.privacyPolicy}
           </Link>{' '}
           |{' '}
-          <Link href="/tos" className="tos-link">
+          <Link href="/tos/" className="tos-link">
             {t.termsOfService}
           </Link>{' '}
           |{' '}
-          <Link href="/pressekit" className="pressekit-link">
+          <Link href="/pressekit/" className="pressekit-link">
             {t.pressKit}
           </Link>
         </span>
