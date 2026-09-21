@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   description:
     "Download UdenUSA til iOS eller Android, eller brug webappen direkte.",
   alternates: {
-    canonical: "https://udenusa.dk/download",
+    canonical: "/download/",
   },
   openGraph: {
     title: "Download UdenUSA",
     description:
       "Download UdenUSA til iOS eller Android, eller brug webappen direkte.",
     images: ["/images/UdenUSAtransparent.png"],
-    url: "https://udenusa.dk/download",
+    url: "/download/",
     type: "website",
   },
   twitter: {

@@ -8,15 +8,22 @@ import BrevoScripts from '@/components/BrevoScripts';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://udenusa.dk'),
   title: 'UdenUSA - Find alternativer til amerikanske produkter',
   description: 'UdenUSA hjælper dig med at identificere amerikanske produkter og finder alternativer fra resten af verden. Støtter du Trump, når du handler?',
   keywords: 'UdenUSA, amerikanske produkter, boykot, danske alternativer, produkt scanner, app',
   authors: [{ name: 'UdenUSA' }],
+  // Applies to "/" only. Every other route overrides this in its own
+  // layout/page metadata — a new route without an override would wrongly
+  // canonicalise to the homepage.
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'UdenUSA - Find alternativer til amerikanske produkter',
     description: 'UdenUSA hjælper dig med at identificere amerikanske produkter og finder alternativer fra resten af verden.',
     images: ['/images/UdenUSAtransparent.png'],
-    url: 'https://udenusa.dk/',
+    url: '/',
     type: 'website',
   },
   twitter: {
@@ -43,7 +50,6 @@ export default function RootLayout({
   return (
     <html lang="da" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://udenusa.dk/" />
         <link
           rel="stylesheet"
           href="https://sibforms.com/forms/end-form/build/sib-styles.css"
