@@ -1,7 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import CopyContact from '@/components/CopyContact';
+import { CONTACT_EMAIL } from '@/lib/contact';
+
+/**
+ * Answers carry inline markup (<br> lists), so they are still injected as HTML
+ * — but where one names the support address, that address becomes a copy
+ * button instead of plain text. The translation stays a flat string so the
+ * FAQPage JSON-LD can use it verbatim.
+ */
+function FaqAnswer({
+  html,
+  copyLabel,
+  copiedLabel,
+}: {
+  html: string;
+  copyLabel: string;
+  copiedLabel: string;
+}) {
+  const parts = html.split(CONTACT_EMAIL);
+
+  if (parts.length === 1) {
+    return <p dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+
+  return (
+    <p>
+      {parts.map((part, index) => (
+        <Fragment key={index}>
+          <span dangerouslySetInnerHTML={{ __html: part }} />
+          {index < parts.length - 1 && (
+            <CopyContact
+              value={CONTACT_EMAIL}
+              copyLabel={copyLabel}
+              copiedLabel={copiedLabel}
+            />
+          )}
+        </Fragment>
+      ))}
+    </p>
+  );
+}
 
 export default function FAQ() {
   const { t } = useLanguage();
@@ -39,7 +80,11 @@ export default function FAQ() {
               </span>
             </div>
             <div className="faq-answer">
-              <p dangerouslySetInnerHTML={{ __html: item.answer }} />
+              <FaqAnswer
+                html={item.answer}
+                copyLabel={t.copyLabel}
+                copiedLabel={t.copiedLabel}
+              />
             </div>
           </div>
         ))}
