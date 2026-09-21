@@ -90,10 +90,6 @@ export function alternatesFor(locale: Language, route: string) {
   };
 }
 
-export function isLocale(value: string): value is Language {
-  return (LOCALES as string[]).includes(value);
-}
-
 /** og:locale wants a full territory code, not a bare language tag. */
 export const OG_LOCALES: Record<Language, string> = {
   da: 'da_DK',
