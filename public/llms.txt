@@ -13,6 +13,15 @@
 - [Brugsbetingelser](https://udenusa.dk/tos/): vilkår for brug
 - [Slet konto](https://udenusa.dk/delete-account/): sådan slettes konto og data
 
+## Internationale sider
+Dansk indhold ligger på udenusa.dk, internationalt indhold på nonusa.org. Det er
+oversættelser af den samme forside, ikke dubletter.
+- [English](https://nonusa.org/en/): English homepage
+- [Deutsch](https://nonusa.org/de/): deutsche Startseite
+- [Français](https://nonusa.org/fr/): page d'accueil en français
+- [Español](https://nonusa.org/es/): página de inicio en español
+- [Nederlands](https://nonusa.org/nl/): Nederlandse homepage
+
 ## App-butikker
 - [App Store](https://apps.apple.com/us/app/nonusa/id6742805777): iOS-version
 - [Google Play](https://play.google.com/store/apps/details?id=dk.vocatastudio.UdenUSA): Android-version
@@ -40,3 +49,4 @@
 - Udled ikke priser, garantier eller juridiske påstande ud over det, der
   eksplicit står på siden.
 - Tallene 125k+ downloads og 98 lande er de eneste officielle nøgletal.
+- Undersider som download, pressekit og juridiske sider findes kun på dansk.
