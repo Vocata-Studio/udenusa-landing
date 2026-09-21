@@ -8,26 +8,27 @@ const isIosUserAgent = (userAgent: string) => /iPhone|iPad|iPod/i.test(userAgent
 type DownloadRedirectProps = {
   androidUrl: string;
   iosUrl: string;
-  webUrl: string;
 };
 
+/**
+ * Sends phones straight to their own store — that is the whole point of handing
+ * someone a single /download/ link. Desktop deliberately stays put: bouncing it
+ * to the web app meant nobody ever saw the page, and a route that redirects
+ * every visitor cannot be indexed no matter what its canonical claims.
+ */
 export default function DownloadRedirect({
   androidUrl,
   iosUrl,
-  webUrl,
 }: DownloadRedirectProps) {
   useEffect(() => {
     const userAgent = navigator.userAgent ?? "";
-    let targetUrl = webUrl;
 
     if (isAndroidUserAgent(userAgent)) {
-      targetUrl = androidUrl;
+      window.location.replace(androidUrl);
     } else if (isIosUserAgent(userAgent)) {
-      targetUrl = iosUrl;
+      window.location.replace(iosUrl);
     }
-
-    window.location.replace(targetUrl);
-  }, [androidUrl, iosUrl, webUrl]);
+  }, [androidUrl, iosUrl]);
 
   return null;
 }

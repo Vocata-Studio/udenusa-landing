@@ -118,6 +118,15 @@ export const translations = {
     vocataSubheading: "(Fra skaberne bag UdenUSA)",
     vocataButton: "Besøg Vocata Studio",
 
+    // Download page
+    downloadEyebrow: "UdenUSA App",
+    downloadTitle: "Download UdenUSA",
+    downloadCopy: "Vælg din platform.",
+    downloadWebButton: "Brug webappen",
+    downloadNote: "På mobil sender vi dig automatisk videre til den rigtige butik.",
+    downloadMetaTitle: "Download UdenUSA",
+    downloadMetaDescription: "Download UdenUSA til iOS eller Android, eller brug webappen direkte.",
+
     // Press Kit page
     backToHome: "← Tilbage til forsiden"
   },
@@ -240,6 +249,15 @@ export const translations = {
     vocataHeading: "Need a website or app?",
     vocataSubheading: "(From the creators behind UdenUSA)",
     vocataButton: "Visit Vocata Studio",
+
+    // Download page
+    downloadEyebrow: "UdenUSA App",
+    downloadTitle: "Download UdenUSA",
+    downloadCopy: "Choose your platform.",
+    downloadWebButton: "Use the web app",
+    downloadNote: "On mobile we send you straight to the right store.",
+    downloadMetaTitle: "Download UdenUSA",
+    downloadMetaDescription: "Download UdenUSA for iOS or Android, or use the web app directly.",
 
     // Press Kit page
     backToHome: "← Back to home page"
@@ -377,6 +395,15 @@ export const translations = {
     vocataSubheading: "(Von den Machern hinter UdenUSA)",
     vocataButton: "Vocata Studio besuchen",
 
+    // Download page
+    downloadEyebrow: "UdenUSA App",
+    downloadTitle: "UdenUSA herunterladen",
+    downloadCopy: "Wähle deine Plattform.",
+    downloadWebButton: "Web-App nutzen",
+    downloadNote: "Auf dem Handy leiten wir dich direkt zum richtigen Store weiter.",
+    downloadMetaTitle: "UdenUSA herunterladen",
+    downloadMetaDescription: "Lade UdenUSA für iOS oder Android herunter oder nutze direkt die Web-App.",
+
     // Press Kit page
     backToHome: "← Zur Startseite"
   },
@@ -512,6 +539,15 @@ export const translations = {
     vocataHeading: "Besoin d'un site web ou d'une app ?",
     vocataSubheading: "(Par les créateurs derrière UdenUSA)",
     vocataButton: "Visiter Vocata Studio",
+
+    // Download page
+    downloadEyebrow: "Application UdenUSA",
+    downloadTitle: "Télécharger UdenUSA",
+    downloadCopy: "Choisis ta plateforme.",
+    downloadWebButton: "Utiliser la web app",
+    downloadNote: "Sur mobile, on t'envoie directement vers la bonne boutique.",
+    downloadMetaTitle: "Télécharger UdenUSA",
+    downloadMetaDescription: "Télécharge UdenUSA pour iOS ou Android, ou utilise directement la web app.",
 
     // Press Kit page
     backToHome: "← Retour à l'accueil"
@@ -649,6 +685,15 @@ export const translations = {
     vocataSubheading: "(De los creadores detrás de UdenUSA)",
     vocataButton: "Visitar Vocata Studio",
 
+    // Download page
+    downloadEyebrow: "Aplicación UdenUSA",
+    downloadTitle: "Descargar UdenUSA",
+    downloadCopy: "Elige tu plataforma.",
+    downloadWebButton: "Usar la web app",
+    downloadNote: "En el móvil te llevamos directamente a la tienda correcta.",
+    downloadMetaTitle: "Descargar UdenUSA",
+    downloadMetaDescription: "Descarga UdenUSA para iOS o Android, o usa directamente la web app.",
+
     // Press Kit page
     backToHome: "← Volver al inicio"
   },
@@ -771,6 +816,15 @@ export const translations = {
     vocataHeading: "Een website of app nodig?",
     vocataSubheading: "(Van de makers achter UdenUSA)",
     vocataButton: "Bezoek Vocata Studio",
+
+    // Download page
+    downloadEyebrow: "UdenUSA App",
+    downloadTitle: "UdenUSA downloaden",
+    downloadCopy: "Kies je platform.",
+    downloadWebButton: "Gebruik de webapp",
+    downloadNote: "Op mobiel sturen we je direct door naar de juiste store.",
+    downloadMetaTitle: "UdenUSA downloaden",
+    downloadMetaDescription: "Download UdenUSA voor iOS of Android, of gebruik direct de webapp.",
 
     // Press Kit page
     backToHome: "← Terug naar homepagina"

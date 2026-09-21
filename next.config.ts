@@ -4,6 +4,8 @@ import {
   DANISH_ORIGIN,
   INTERNATIONAL_LOCALES,
   INTERNATIONAL_ORIGIN,
+  LOCALIZED_ROUTES,
+  pathFor,
   X_DEFAULT_LOCALE,
 } from './lib/i18n';
 
@@ -15,6 +17,13 @@ const INTERNATIONAL_HOST = '(www\\.)?nonusa\\.org';
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+
+  experimental: {
+    // Danish and the international locales have separate root layouts, so
+    // there is no single layout a not-found.tsx could compose a 404 from.
+    // app/global-not-found.tsx renders its own document instead.
+    globalNotFound: true,
+  },
 
   async redirects() {
     return [
@@ -30,13 +39,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // The .org root is the English homepage.
-      {
-        source: '/',
-        has: [{ type: 'host', value: INTERNATIONAL_HOST }],
-        destination: `${INTERNATIONAL_ORIGIN}/${X_DEFAULT_LOCALE}/`,
+      // Every localized route lives under /<lang>/ on .org. An unprefixed hit —
+      // the bare root, or a Danish-shaped link copied across — has to be sent to
+      // the x-default locale: route groups are URL-invisible, so the (da) tree
+      // would otherwise happily serve the Danish page on either host.
+      ...LOCALIZED_ROUTES.map((route) => ({
+        source: route,
+        has: [{ type: 'host' as const, value: INTERNATIONAL_HOST }],
+        destination: `${INTERNATIONAL_ORIGIN}${pathFor(X_DEFAULT_LOCALE, route)}`,
         permanent: true,
-      },
+      })),
 
       // These pages exist in Danish only, so they belong on the Danish domain
       // no matter which host they are requested from.

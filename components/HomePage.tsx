@@ -12,7 +12,7 @@ import QRModal from '@/components/QRModal';
 import LogoLoop from '@/components/LogoLoop';
 import GlobeStats from '@/components/GlobeStats';
 import { useLanguage } from '@/lib/LanguageContext';
-import { DANISH_ORIGIN, originFor, urlFor } from '@/lib/i18n';
+import { DANISH_ORIGIN, originFor, pathFor, urlFor } from '@/lib/i18n';
 import { track } from '@vercel/analytics';
 
 const AndroidIcon = () => (
@@ -201,7 +201,7 @@ export default function Home() {
         <p className="tagline">{t.tagline}</p>
         <p className="description">{t.description}</p>
         <div className="cta-buttons">
-          <a href="/download" className="cta" id="downloadButton">
+          <a href={pathFor(language, '/download/')} className="cta" id="downloadButton">
             {t.ctaButton}
           </a>
           <a

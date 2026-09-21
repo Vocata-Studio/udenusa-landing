@@ -31,11 +31,10 @@ export const X_DEFAULT_LOCALE: Language = 'en';
  * hreflang at language-mismatched content. Add a path here once its copy is
  * genuinely translated.
  */
-export const LOCALIZED_ROUTES = ['/'] as const;
+export const LOCALIZED_ROUTES = ['/', '/download/'] as const;
 
 /** Routes that exist only in Danish, on the .dk domain. */
 export const DANISH_ONLY_ROUTES = [
-  '/download/',
   '/pressekit/',
   '/privacy/',
   '/tos/',
