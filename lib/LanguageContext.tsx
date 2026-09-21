@@ -22,7 +22,13 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
-const DEFAULT_LANGUAGE: Language = 'en';
+// Rendered on the server and on first paint. Must match <html lang> and the
+// static metadata in app/layout.tsx, otherwise crawlers see Danish metadata on
+// an English page.
+const SSR_LANGUAGE: Language = 'da';
+
+// Used when the visitor's browser languages match none of our translations.
+const FALLBACK_LANGUAGE: Language = 'en';
 
 function isLanguage(value: string): value is Language {
   return Object.prototype.hasOwnProperty.call(translations, value);
@@ -33,7 +39,7 @@ function normalizeLanguageCode(value: string) {
 }
 
 function detectBrowserLanguage(): Language {
-  if (typeof navigator === 'undefined') return DEFAULT_LANGUAGE;
+  if (typeof navigator === 'undefined') return FALLBACK_LANGUAGE;
 
   const candidates = [
     ...(Array.isArray(navigator.languages) ? navigator.languages : []),
@@ -45,18 +51,17 @@ function detectBrowserLanguage(): Language {
     if (isLanguage(normalized)) return normalized;
   }
 
-  return DEFAULT_LANGUAGE;
+  return FALLBACK_LANGUAGE;
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
+  const [language, setLanguageState] = useState<Language>(SSR_LANGUAGE);
   const pathname = usePathname();
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('preferredLanguage', lang);
     document.documentElement.lang = lang;
-    document.title = translations[lang].pageTitle;
   }, []);
 
   useEffect(() => {
@@ -71,7 +76,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = language;
-    document.title = translations[language].pageTitle;
+    // Only the homepage title is language-switched here. Other routes get their
+    // title from their own metadata export, which we must not clobber.
+    if (pathname === '/') {
+      document.title = translations[language].pageTitle;
+    }
   }, [language, pathname]);
 
   const value = useMemo(() => ({
