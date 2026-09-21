@@ -54,6 +54,20 @@ const nextConfig: NextConfig = {
         destination: `${DANISH_ORIGIN}/:path*/`,
         permanent: true,
       },
+
+      // The site was static HTML until March 2025. These three URLs are still
+      // linked from places that cannot be edited retroactively — /privacy.html
+      // is the privacy policy link in the shipped iOS app — so they have to keep
+      // resolving for as long as those builds are in the wild.
+      {
+        source: '/index.html',
+        has: [{ type: 'host', value: INTERNATIONAL_HOST }],
+        destination: `${INTERNATIONAL_ORIGIN}/${X_DEFAULT_LOCALE}/`,
+        permanent: true,
+      },
+      { source: '/index.html', destination: `${DANISH_ORIGIN}/`, permanent: true },
+      { source: '/privacy.html', destination: `${DANISH_ORIGIN}/privacy/`, permanent: true },
+      { source: '/pressekit.html', destination: `${DANISH_ORIGIN}/pressekit/`, permanent: true },
     ];
   },
 };
