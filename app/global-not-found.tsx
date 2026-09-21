@@ -31,7 +31,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: '404 – UdenUSA',
   description: 'The page you are looking for does not exist.',
-  robots: 'noindex, follow',
   icons: {
     icon: '/images/UdenUSAtransparent.png',
   },
