@@ -5,6 +5,8 @@ import Image from 'next/image';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import CopyContact from '@/components/CopyContact';
+import { CONTACT_EMAIL } from '@/lib/contact';
 
 export default function PressKit() {
   const { language, t } = useLanguage();
@@ -150,9 +152,11 @@ function DanishContent({ backToHome }: { backToHome: string }) {
         <h2 className="section-title">5a. Kontakt os direkte</h2>
         <p className="pressekit-text">
           <strong>E-mail:</strong>{' '}
-          <a href="mailto:info@nonusa.org" style={{ color: '#32d74b', textDecoration: 'none' }}>
-            info@nonusa.org
-          </a>
+          <CopyContact
+            value={CONTACT_EMAIL}
+            copyLabel="kopier"
+            copiedLabel="Kopieret"
+          />
         </p>
         <p className="pressekit-text">
           Vi svarer gerne på spørgsmål, tilbyder interviews og kan demonstrere appen.
@@ -493,9 +497,11 @@ function EnglishContent({ backToHome }: { backToHome: string }) {
         <h2 className="section-title">10a. Contact Us Directly</h2>
         <p className="pressekit-text">
           <strong>Email:</strong>{' '}
-          <a href="mailto:info@nonusa.org" style={{ color: '#32d74b', textDecoration: 'none' }}>
-            info@nonusa.org
-          </a>
+          <CopyContact
+            value={CONTACT_EMAIL}
+            copyLabel="copy"
+            copiedLabel="Copied"
+          />
         </p>
         <p className="pressekit-text">
           We are happy to answer questions, provide interviews, and demonstrate the app.

@@ -127,6 +127,10 @@ export const translations = {
     downloadMetaTitle: "Download UdenUSA",
     downloadMetaDescription: "Download UdenUSA til iOS eller Android, eller brug webappen direkte.",
 
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "kopier",
+    copiedLabel: "Kopieret",
+
     // Press Kit page
     backToHome: "← Tilbage til forsiden"
   },
@@ -258,6 +262,10 @@ export const translations = {
     downloadNote: "On mobile we send you straight to the right store.",
     downloadMetaTitle: "Download UdenUSA",
     downloadMetaDescription: "Download UdenUSA for iOS or Android, or use the web app directly.",
+
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "copy",
+    copiedLabel: "Copied",
 
     // Press Kit page
     backToHome: "← Back to home page"
@@ -404,6 +412,10 @@ export const translations = {
     downloadMetaTitle: "UdenUSA herunterladen",
     downloadMetaDescription: "Lade UdenUSA für iOS oder Android herunter oder nutze direkt die Web-App.",
 
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "kopieren",
+    copiedLabel: "Kopiert",
+
     // Press Kit page
     backToHome: "← Zur Startseite"
   },
@@ -548,6 +560,10 @@ export const translations = {
     downloadNote: "Sur mobile, on t'envoie directement vers la bonne boutique.",
     downloadMetaTitle: "Télécharger UdenUSA",
     downloadMetaDescription: "Télécharge UdenUSA pour iOS ou Android, ou utilise directement la web app.",
+
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "copier",
+    copiedLabel: "Copié",
 
     // Press Kit page
     backToHome: "← Retour à l'accueil"
@@ -694,6 +710,10 @@ export const translations = {
     downloadMetaTitle: "Descargar UdenUSA",
     downloadMetaDescription: "Descarga UdenUSA para iOS o Android, o usa directamente la web app.",
 
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "copiar",
+    copiedLabel: "Copiado",
+
     // Press Kit page
     backToHome: "← Volver al inicio"
   },
@@ -825,6 +845,10 @@ export const translations = {
     downloadNote: "Op mobiel sturen we je direct door naar de juiste store.",
     downloadMetaTitle: "UdenUSA downloaden",
     downloadMetaDescription: "Download UdenUSA voor iOS of Android, of gebruik direct de webapp.",
+
+    // Contact details (copied to the clipboard, never a mailto:)
+    copyLabel: "kopiëren",
+    copiedLabel: "Gekopieerd",
 
     // Press Kit page
     backToHome: "← Terug naar homepagina"

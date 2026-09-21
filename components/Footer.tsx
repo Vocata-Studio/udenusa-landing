@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { track } from '@vercel/analytics';
 import { useLanguage } from '@/lib/LanguageContext';
+import CopyContact from '@/components/CopyContact';
+import { CONTACT_EMAIL } from '@/lib/contact';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -26,7 +28,12 @@ export default function Footer() {
         </span>
 
         <span className="footer-links">
-          <a href="mailto:info@nonusa.org">info@nonusa.org</a> |{' '}
+          <CopyContact
+            value={CONTACT_EMAIL}
+            copyLabel={t.copyLabel}
+            copiedLabel={t.copiedLabel}
+          />{' '}
+          |{' '}
           <Link href="/privacy/" className="privacy-link">
             {t.privacyPolicy}
           </Link>{' '}

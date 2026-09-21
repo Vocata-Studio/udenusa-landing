@@ -4,6 +4,8 @@ import Link from 'next/link';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import CopyContact from '@/components/CopyContact';
+import { CONTACT_EMAIL } from '@/lib/contact';
 
 export default function DeleteAccount() {
   const { language, t } = useLanguage();
@@ -36,9 +38,11 @@ function DanishContent({ backToHome }: { backToHome: string }) {
           For at anmode om sletning af din UdenUSA-konto, send en e-mail til:
         </p>
         <p className="privacy-text" style={{ fontSize: '1.1rem', fontWeight: '600' }}>
-          <a href="mailto:info@nonusa.org" style={{ color: '#32d74b', textDecoration: 'none' }}>
-            info@nonusa.org
-          </a>
+          <CopyContact
+            value={CONTACT_EMAIL}
+            copyLabel="kopier"
+            copiedLabel="Kopieret"
+          />
         </p>
         <p className="privacy-text">
           Inkluder venligst den e-mailadresse, der er tilknyttet din UdenUSA-konto.
@@ -99,9 +103,11 @@ function EnglishContent({ backToHome }: { backToHome: string }) {
           To request deletion of your UdenUSA account, email us at:
         </p>
         <p className="privacy-text" style={{ fontSize: '1.1rem', fontWeight: '600' }}>
-          <a href="mailto:info@nonusa.org" style={{ color: '#32d74b', textDecoration: 'none' }}>
-            info@nonusa.org
-          </a>
+          <CopyContact
+            value={CONTACT_EMAIL}
+            copyLabel="copy"
+            copiedLabel="Copied"
+          />
         </p>
         <p className="privacy-text">
           Please include the email address associated with your UdenUSA account.
