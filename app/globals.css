@@ -1573,6 +1573,225 @@ hr {
   padding: 0 0.25rem;
 }
 
+/* 404 page. Rendered outside both root layouts (see app/global-not-found.tsx),
+   so it carries its own layout and shares only the tokens above. */
+.not-found {
+  position: relative;
+  overflow: hidden;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 20px;
+  background: #0a0a0a;
+}
+
+/* The glow sits on a pseudo-element so it can drift without repainting the
+   text. Oversized so its edges never show while it moves. */
+.not-found::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 20% 20%, rgba(50, 215, 75, 0.14), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(0, 122, 255, 0.16), transparent 50%);
+  animation: nfDrift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.not-found > * {
+  position: relative;
+}
+
+/* The logo is a barcode scanner, so a scan line sweeps it: the app looked and
+   found nothing. */
+.not-found-mark {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 28px;
+  animation: nfRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+.not-found-logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.not-found-mark::after {
+  content: '';
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 18%;
+  height: 2px;
+  border-radius: 2px;
+  background: #32d74b;
+  box-shadow: 0 0 8px 2px rgba(50, 215, 75, 0.55);
+  animation: nfScan 2.4s ease-in-out infinite;
+}
+
+.not-found-code {
+  font-size: clamp(5.5rem, 18vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+  /* A highlight band on top of the brand gradient, both clipped to the
+     glyphs, so the shimmer only ever shows through the digits. */
+  background-image: linear-gradient(
+      110deg,
+      transparent 38%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 62%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #32d74b 120%);
+  background-size: 250% 100%, 100% 100%;
+  background-position: 200% 0, 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nfRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both,
+    nfShimmer 7s ease-in-out 1.2s infinite;
+}
+
+.not-found h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 12px;
+}
+
+.not-found-copy {
+  max-width: 44ch;
+  margin: 0 auto 32px;
+  font-size: 1.05rem;
+  color: rgba(245, 245, 247, 0.72);
+}
+
+.not-found-note {
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* One block of copy per locale is in the HTML; the inline script in the page
+   sets <html lang> from the domain and path, and only that block is shown.
+   With scripting off, lang stays "en" and the English block is the fallback. */
+.not-found-copy-block {
+  display: none;
+}
+
+html[lang="da"] .not-found-copy-block[data-lang="da"],
+html[lang="en"] .not-found-copy-block[data-lang="en"],
+html[lang="de"] .not-found-copy-block[data-lang="de"],
+html[lang="fr"] .not-found-copy-block[data-lang="fr"],
+html[lang="es"] .not-found-copy-block[data-lang="es"],
+html[lang="nl"] .not-found-copy-block[data-lang="nl"] {
+  display: block;
+}
+
+/* Entrance: each line rises into place a beat after the one above it. */
+.not-found-copy-block > * {
+  animation: nfRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.not-found-copy-block > :nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.not-found-copy-block > :nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.not-found-copy-block > :nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.not-found-copy-block > :nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes nfRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nfScan {
+  0%,
+  100% {
+    top: 18%;
+  }
+  50% {
+    top: 80%;
+  }
+}
+
+@keyframes nfShimmer {
+  0%,
+  35% {
+    background-position: 200% 0, 0 0;
+  }
+  60%,
+  100% {
+    background-position: -100% 0, 0 0;
+  }
+}
+
+@keyframes nfDrift {
+  from {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  to {
+    transform: translate(3%, 3%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found::before,
+  .not-found-mark,
+  .not-found-code,
+  .not-found-copy-block > * {
+    animation: none;
+  }
+
+  .not-found-mark::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .not-found {
+    padding: 48px 20px;
+  }
+
+  .not-found-mark {
+    margin-bottom: 22px;
+  }
+
+  .not-found-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .not-found h1 {
+    font-size: 1.5rem;
+  }
+
+  .not-found .cta {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 /* ==========================================================================
    Copy-to-clipboard contact details
    ========================================================================== */
