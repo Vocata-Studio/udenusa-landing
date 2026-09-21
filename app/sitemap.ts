@@ -8,9 +8,24 @@ import {
   urlFor,
 } from '@/lib/i18n';
 
-// Bumped whenever the page content meaningfully changes. Using the build date
-// would make every deploy claim every page changed, which Google learns to ignore.
-const LAST_MODIFIED = new Date('2026-09-21');
+type SitemapRoute =
+  | (typeof LOCALIZED_ROUTES)[number]
+  | (typeof DANISH_ONLY_ROUTES)[number];
+
+// The date each page's content actually last changed — not the build date, and
+// not the date the file happened to move. A sitemap that claims every page
+// changed on every deploy teaches Google to discount the signal entirely.
+// Bump an entry only when that page's copy really changes. The Record type is
+// exhaustive on purpose: adding a route in lib/i18n fails the build until it
+// gets a date here.
+const LAST_MODIFIED: Record<SitemapRoute, string> = {
+  '/': '2026-09-21',
+  '/download/': '2026-09-21',
+  '/pressekit/': '2026-09-21',
+  '/privacy/': '2026-01-23',
+  '/tos/': '2026-01-23',
+  '/delete-account/': '2026-01-14',
+};
 
 const DANISH_ONLY_PRIORITY: Record<string, number> = {
   '/download/': 0.8,
@@ -35,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of [DANISH_LOCALE, ...INTERNATIONAL_LOCALES]) {
       entries.push({
         url: urlFor(locale, route),
-        lastModified: LAST_MODIFIED,
+        lastModified: new Date(LAST_MODIFIED[route]),
         changeFrequency: 'weekly',
         priority: locale === DANISH_LOCALE ? 1.0 : 0.9,
         alternates: { languages },
@@ -46,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const route of DANISH_ONLY_ROUTES) {
     entries.push({
       url: urlFor(DANISH_LOCALE, route),
-      lastModified: LAST_MODIFIED,
+      lastModified: new Date(LAST_MODIFIED[route]),
       changeFrequency: 'monthly',
       priority: DANISH_ONLY_PRIORITY[route] ?? 0.3,
     });
