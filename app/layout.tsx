@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     description: 'UdenUSA hjælper dig med at identificere amerikanske produkter og finder alternativer fra resten af verden.',
     images: ['/images/UdenUSAtransparent.png'],
   },
-  robots: 'index, follow',
+  // max-snippet:-1 lets AI answer engines quote the page at any length;
+  // max-image-preview:large allows full-size image previews.
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1',
   icons: {
     icon: '/images/UdenUSAtransparent.png',
   },
