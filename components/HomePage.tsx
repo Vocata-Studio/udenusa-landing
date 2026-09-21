@@ -189,14 +189,18 @@ export default function Home() {
         </div>
         <h1>
           <span>{language === 'da' ? 'UdenUSA' : 'NonUSA'}</span>{' '}
-          <Image
-            src="/images/UdenUSAtransparent.png"
-            alt="UdenUSA Logo"
-            width={70}
-            height={70}
-            className="logo-image"
-            loading="eager"
-          />
+          {/* The scan line the 404 sweeps over this same mark needs an
+              element of its own to hang off; an <img> has no ::after. */}
+          <span className="logo-mark">
+            <Image
+              src="/images/UdenUSAtransparent.png"
+              alt="UdenUSA Logo"
+              width={70}
+              height={70}
+              className="logo-image"
+              loading="eager"
+            />
+          </span>
         </h1>
         <p className="tagline">{t.tagline}</p>
         <p className="description">{t.description}</p>

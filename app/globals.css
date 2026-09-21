@@ -683,9 +683,69 @@ footer a:hover {
 
 /* Logo */
 .logo-image {
+  display: block;
   height: 70px;
+}
+
+/* The logo is a barcode scanner, so a scan line sweeps it: the app is looking.
+   The 404's mark is the same logo at a smaller size, so both wear the line —
+   it is placed in percentages and fits either one. Only when it runs differs:
+   see below. */
+.logo-mark,
+.not-found-mark {
+  position: relative;
+  display: inline-flex;
+}
+
+.logo-mark {
   margin-left: 10px;
-  vertical-align: middle;
+}
+
+.logo-mark::after,
+.not-found-mark::after {
+  content: '';
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 18%;
+  height: 2px;
+  border-radius: 2px;
+  background: #32d74b;
+  box-shadow: 0 0 8px 2px rgba(50, 215, 75, 0.55);
+  animation: logoScan 2.4s ease-in-out infinite;
+}
+
+/* On the home page the line would loop for as long as the page is open, which
+   is a lot of motion to sit next to while reading. So it rests here, paused and
+   invisible, and only scans while the wordmark is hovered — pausing rather than
+   stopping, so it fades out where it stands instead of snapping back to the top.
+   The 404 keeps the sweep running: there the page is the moment. */
+.logo-mark::after {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation-play-state: paused;
+}
+
+header h1:hover .logo-mark::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes logoScan {
+  0%,
+  100% {
+    top: 18%;
+  }
+  50% {
+    top: 80%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark::after,
+  .not-found-mark::after {
+    display: none;
+  }
 }
 
 /* Language Switcher */
@@ -1616,11 +1676,8 @@ hr {
   position: relative;
 }
 
-/* The logo is a barcode scanner, so a scan line sweeps it: the app looked and
-   found nothing. */
+/* The scan line over the mark is shared with the hero's logo, up in Logo. */
 .not-found-mark {
-  position: relative;
-  display: inline-block;
   margin-bottom: 28px;
   animation: nfRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
@@ -1629,19 +1686,6 @@ hr {
   display: block;
   width: 72px;
   height: 72px;
-}
-
-.not-found-mark::after {
-  content: '';
-  position: absolute;
-  left: 14%;
-  right: 14%;
-  top: 18%;
-  height: 2px;
-  border-radius: 2px;
-  background: #32d74b;
-  box-shadow: 0 0 8px 2px rgba(50, 215, 75, 0.55);
-  animation: nfScan 2.4s ease-in-out infinite;
 }
 
 .not-found-code {
@@ -1737,16 +1781,6 @@ html[lang="nl"] .not-found-copy-block[data-lang="nl"] {
   }
 }
 
-@keyframes nfScan {
-  0%,
-  100% {
-    top: 18%;
-  }
-  50% {
-    top: 80%;
-  }
-}
-
 @keyframes nfShimmer {
   0%,
   35% {
@@ -1773,10 +1807,6 @@ html[lang="nl"] .not-found-copy-block[data-lang="nl"] {
   .not-found-code,
   .not-found-copy-block > * {
     animation: none;
-  }
-
-  .not-found-mark::after {
-    display: none;
   }
 }
 
