@@ -86,7 +86,7 @@ export const translations = {
     privacyPolicy: "Privatlivspolitik",
     termsOfService: "Brugsbetingelser",
     pressKit: "Pressekit",
-    vocataSignature: "Designet & Udviklet af Vocata Studio",
+    vocataSignature: "Designet & Udviklet af VocataWeb",
     
     // App ETA Section
     etaTitle: "App Status",
@@ -116,7 +116,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "Har du brug for en hjemmeside eller app?",
     vocataSubheading: "(Fra skaberne bag UdenUSA)",
-    vocataButton: "Besøg Vocata Studio",
+    vocataButton: "Besøg VocataWeb",
 
     // Download page
     downloadEyebrow: "UdenUSA App",
@@ -229,7 +229,7 @@ export const translations = {
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     pressKit: "Press Kit",
-    vocataSignature: "Designed & Developed by Vocata Studio",
+    vocataSignature: "Designed & Developed by VocataWeb",
 
     // App ETA Section
     etaTitle: "App Status",
@@ -259,7 +259,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "Need a website or app?",
     vocataSubheading: "(From the creators behind UdenUSA)",
-    vocataButton: "Visit Vocata Studio",
+    vocataButton: "Visit VocataWeb",
 
     // Download page
     downloadEyebrow: "UdenUSA App",
@@ -383,7 +383,7 @@ export const translations = {
     privacyPolicy: "Datenschutzerklärung",
     termsOfService: "Nutzungsbedingungen",
     pressKit: "Pressekit",
-    vocataSignature: "Gestaltet & Entwickelt von Vocata Studio",
+    vocataSignature: "Gestaltet & Entwickelt von VocataWeb",
 
     // App ETA Section
     etaTitle: "App-Status & ETA",
@@ -415,7 +415,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "Brauchst du eine Website oder App?",
     vocataSubheading: "(Von den Machern hinter UdenUSA)",
-    vocataButton: "Vocata Studio besuchen",
+    vocataButton: "VocataWeb besuchen",
 
     // Download page
     downloadEyebrow: "UdenUSA App",
@@ -539,7 +539,7 @@ export const translations = {
     privacyPolicy: "Politique de confidentialité",
     termsOfService: "Conditions d'utilisation",
     pressKit: "Kit presse",
-    vocataSignature: "Conçu & Développé par Vocata Studio",
+    vocataSignature: "Conçu & Développé par VocataWeb",
 
     // App ETA Section
     etaTitle: "Statut de l'app & ETA",
@@ -571,7 +571,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "Besoin d'un site web ou d'une app ?",
     vocataSubheading: "(Par les créateurs derrière UdenUSA)",
-    vocataButton: "Visiter Vocata Studio",
+    vocataButton: "Visiter VocataWeb",
 
     // Download page
     downloadEyebrow: "Application UdenUSA",
@@ -695,7 +695,7 @@ export const translations = {
     privacyPolicy: "Política de privacidad",
     termsOfService: "Términos de servicio",
     pressKit: "Kit de prensa",
-    vocataSignature: "Diseñado y Desarrollado por Vocata Studio",
+    vocataSignature: "Diseñado y Desarrollado por VocataWeb",
 
     // App ETA Section
     etaTitle: "Estado de la app & ETA",
@@ -727,7 +727,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "¿Necesitas una web o una app?",
     vocataSubheading: "(De los creadores detrás de UdenUSA)",
-    vocataButton: "Visitar Vocata Studio",
+    vocataButton: "Visitar VocataWeb",
 
     // Download page
     downloadEyebrow: "Aplicación UdenUSA",
@@ -840,7 +840,7 @@ export const translations = {
     privacyPolicy: "Privacybeleid",
     termsOfService: "Gebruiksvoorwaarden",
     pressKit: "Perskit",
-    vocataSignature: "Ontworpen & Ontwikkeld door Vocata Studio",
+    vocataSignature: "Ontworpen & Ontwikkeld door VocataWeb",
 
     // App ETA Section
     etaTitle: "App Status",
@@ -870,7 +870,7 @@ export const translations = {
     // Vocata Studio CTA
     vocataHeading: "Een website of app nodig?",
     vocataSubheading: "(Van de makers achter UdenUSA)",
-    vocataButton: "Bezoek Vocata Studio",
+    vocataButton: "Bezoek VocataWeb",
 
     // Download page
     downloadEyebrow: "UdenUSA App",
