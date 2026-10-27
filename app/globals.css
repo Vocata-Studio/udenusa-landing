@@ -32,6 +32,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Text selection in brand green instead of the browser's default blue. */
+::selection {
+  background-color: rgba(50, 215, 75, 0.45);
+  color: #fff;
+}
+
 /* Announcement Banner — frosted glass bar over whatever scrolls beneath it. */
 .announcement-banner {
   background-color: rgba(10, 20, 12, 0.6);
