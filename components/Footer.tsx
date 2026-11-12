@@ -13,7 +13,7 @@ export default function Footer() {
     <footer>
       <p className="footer-line">
         <a
-          href="https://vocata.studio/kontakt?utm_source=udenusa&utm_medium=referral&utm_campaign=footer_signature"
+          href="https://vocata.dk/kontakt?utm_source=udenusa&utm_medium=referral&utm_campaign=footer_signature"
           className="vocata-signature"
           target="_blank"
           rel="noopener noreferrer"

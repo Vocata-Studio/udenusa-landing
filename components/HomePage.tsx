@@ -288,7 +288,7 @@ export default function Home() {
         <AppETA />
 
         <a
-          href="https://vocata.studio/kontakt?utm_source=udenusa&utm_medium=referral&utm_campaign=app_badge"
+          href="https://vocata.dk/kontakt?utm_source=udenusa&utm_medium=referral&utm_campaign=app_badge"
           className="vocata-badge"
           target="_blank"
           rel="noreferrer"
